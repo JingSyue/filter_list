@@ -20,8 +20,11 @@ def filter_list(input_list: List[int]) -> List[int]:
     if len(input_list) % 10 != 0:
         raise ValueError("Input list length must be a multiple of 10. Received length: {}".format(len(input_list)))
     
-    # Efficiently filter the list with comprehension, leveraging the fact that
-    # we only need to include elements not at positions multiple of 2 or 3.
+    # Check for non-integer elements
+    for item in input_list:
+        if not isinstance(item, int):
+            raise TypeError("All elements in the input list must be integers. Found non-integer element: {}".format(item))
+    
     filtered_list = [
         item for index, item in enumerate(input_list, start=1)
         if index % 2 != 0 and index % 3 != 0
