@@ -1,6 +1,6 @@
 from typing import List
 
-def filter_list_optimized(input_list: List[int]) -> List[int]:
+def filter_list(input_list: List[int]) -> List[int]:
     """
     Filters out elements from the input list based on their position.
     
